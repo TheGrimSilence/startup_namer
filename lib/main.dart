@@ -1,7 +1,5 @@
-import 'dart:math';
-
-import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
+import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
 
@@ -90,6 +88,15 @@ class _RandomWordsState extends State<RandomWords> {
               pair.asPascalCase,
               style: _biggerFont,
             ),
+            onTap: () {
+              setState(() {
+                if (_saved.contains(pair)) {
+                  _saved.remove(pair);
+                } else {
+                  _saved.add(pair);
+                }
+              });
+            },
           );
         });
 
